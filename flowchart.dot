@@ -1,0 +1,83 @@
+digraph d {
+    graph [fontsize=16 compound=true, splines=ortho];
+    node [shape=rect fontsize=14, style=filled];
+
+    subgraph cluster_source {
+        label = "Source";
+        
+        n [label = "NetCDF Input"];
+        f [label = "Fema APIs"];
+
+
+    }
+        
+    subgraph cluster_poly {
+       label = "Polygonal Contouring";
+
+       d [label = "NetCDF Decoding"];
+       g [label = "Tricontour"];
+       z [label = "Polygon Generation"]
+       l [label = "Level Interpolation"];
+       c [label = "JSON Encoding"];
+
+       d -> {g, l};
+       g -> z;
+       {z, l} -> c;
+    }
+    
+    subgraph cluster_web {
+    
+        label = "API Interpreter";
+        
+        y [label = "Get Request"];
+        w [label = "PostGIS Interface"];
+        k [label = "JSON Decoder"];
+        
+        y -> k;
+        k -> w;
+        n -> d;
+        f -> y;
+    
+    }
+
+    subgraph cluster_store {
+        label = "Storage";
+
+        j [label = "File Cache"];
+        s [label = "Flask Server"];
+        j -> s;
+        
+        p [label = "PostGIS Database"];
+        c -> j;
+        p -> s [dir = "both"];
+        w -> p;
+    }
+
+    subgraph cluster_front {
+        label = "Frontend";
+
+        r [label = "JSON Request"];
+        u [label = "Polygon Generation"];
+        m [label = "Leaflet Map"];
+        i [label = "Local Impact"];
+        s -> r [dir = "both"];
+        r -> u;
+        u -> m;
+        r -> i;
+        i -> {m, s};
+
+        subgraph cluster_cont {
+            label = "Controls";
+
+            b [label = "Colorbar"];
+            t [label = "Transection"];    
+            
+        }
+
+        b -> u;
+        t -> r;
+
+
+    }
+
+}
