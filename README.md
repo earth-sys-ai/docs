@@ -1,4 +1,4 @@
-# documentation
+# poster
 ---
 ## Project Schematic
 ![flowchart](flowchart.svg)
