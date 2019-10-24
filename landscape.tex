@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class options                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Orientation:                         %
+% portrait (default), landscape        %
+%                                      %
+% Paper size:                          %
+% a0paper (default), a1paper, a2paper, %
+% a3paper, a4paper, a5paper, a6paper   %
+%                                      %
+% Language:                            %
+% english (default), norsk             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[landscape]{uioposter}
+
+
+\usepackage{lipsum}                                % Dummy text
+\usepackage[figwidth = 0.98\linewidth]{todonotes}  % Dummy image (and more!)
+\usepackage[absolute, overlay]{textpos}            % Figure placement
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+
+
+\title{An Interactive Web-based GIS System to Evaluate Hurricane Inundation Impacts}
+\author
+{%
+    Michael Bednarek%\inst{1}
+    \and
+    Saeed Moghimi%\inst{2}
+}
+%% Optional:
+%\institute
+%{
+%    \inst{1} Department of Mathematics
+%    \and
+%    \inst{2} Department of Informatics
+%}
+%% Or:
+%\institute{Contact information}
+
+
+%% Remove footline:
+%\setbeamertemplate{footline}{}
+
+
+\begin{document}
+\begin{frame}
+\begin{columns}[onlytextwidth]
+
+
+\begin{column}{\textwidth/3 - 2cm}
+    \begin{block}{Introduction}
+        Test
+    \end{block}
+
+    \begin{block}{Collection}
+        Ramble here about where we get the data.
+    \end{block}
+    
+    \begin{block}{Processing}
+        Discuss contouring and formatting.
+    \end{block}
+    
+\end{column}
+
+
+\begin{column}{\textwidth/3 - 2cm}
+    \begin{block}{Serving}
+        Talk about protocol and API functionality.
+    \end{block}
+
+    \begin{exampleblock}{Example}
+        Talk about handling of an example such as Sandy.
+        Show images including polygons and GUI.
+    \end{exampleblock}
+\end{column}
+
+
+\begin{column}{\textwidth/3 - 2cm}
+    \begin{block}{Purpose}
+        Talk about purpose behind project and possible uses.
+    \end{block}
+    
+     \begin{block}{Process}
+        Talk about development process.
+    \end{block}
+    
+
+    \begin{block}{Improvements}
+        Talk about possible future improvements for the project.
+    \end{block}
+\end{column}
+
+
+\end{columns}
+
+
+\begin{textblock}{0.5}(0.025, 0.9575)
+    \color{white}
+    \sffamily
+    \textbf{Github Organization}
+    \\
+    https://github.com/earth-sys-ai
+\end{textblock}
+
+
+\end{frame}
+\end{document}
