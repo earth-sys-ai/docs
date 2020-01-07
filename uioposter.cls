@@ -50,7 +50,7 @@
 \LoadClass[t]{beamer}
 
 
-\RequirePackage[size = a0, scale = 1.5]{beamerposter}
+\RequirePackage[size = a0, scale = 1.35]{beamerposter}
 \RequirePackage{etoolbox}
 \RequirePackage{pgfpages}
 \RequirePackage[utf8]{inputenx}
@@ -224,7 +224,7 @@
 
         \usebeamerfont*{block title}
         \insertblocktitle
-        
+
     \end{beamercolorbox}
 
     \nointerlineskip
